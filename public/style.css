@@ -6,7 +6,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background: url(https://t4.ftcdn.net/jpg/05/76/16/51/240_F_576165181_jhX7CNESWMarKDEbJQ5nxKho6Kd85D22.jpg) no-repeat center center fixed;
+    background: url(/others/ion-fet-C4G18Paw0d4-unsplash.jpg) no-repeat center center fixed;
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -161,12 +161,12 @@ input:focus {
     background-color: darkred;
 }
 
-#studentListContainer ul {
+#searchResultContainer ul {
     list-style: none;
     padding-left: 0;
 }
 
-#studentList li {
+#searchResults li {
     background-color: #ffc107;
     color: #333;
     padding: 10px;
@@ -195,4 +195,57 @@ border: none;
 font-size: 20px;
 cursor: pointer;
 color: red;
+}
+#studentListContainer {
+display: none;
+margin-top: 20px;
+}
+
+#studentList {
+list-style: none;
+}
+
+#studentList li {
+display: flex;
+align-items: center;
+gap: 5px; /* Adjusts space between photo and text */
+background-color: #007bff;
+color: white;
+padding: 10px;
+border-radius: 4px;
+margin-bottom: 10px;
+position: relative;
+animation: fade-in 0.5s ease-in-out;
+}
+
+#studentList li button {
+position: absolute;
+right: 10px;
+top: 10px;
+background-color: red;
+border: none;
+color: white;
+padding: 5px;
+cursor: pointer;
+border-radius: 50%;
+transition: background-color 0.3s ease;
+}
+
+#studentList li button:hover {
+background-color: darkred;
+}
+
+.search-results .delete-btn {
+background-color: transparent;
+border: none;
+color: #ff4d4d;
+font-size: 16px;
+cursor: pointer;
+margin-left: 10px;
+transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.search-results .delete-btn:hover {
+color: #ff1a1a;
+transform: scale(1.2);
 }
