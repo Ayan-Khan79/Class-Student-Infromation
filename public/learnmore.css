@@ -7,7 +7,7 @@
 
 body {
     line-height: 1.6;
-    background-image: url('ion-fet-C4G18Paw0d4-unsplash.jpg'); /* Replace with your image path */
+    background-image: url('./Pictures/service.jpg'); /* Replace with your image path */
     background-size: cover;
     background-position: center;
     transition: background-image 0.5s ease-in-out;
