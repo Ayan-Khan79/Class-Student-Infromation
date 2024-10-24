@@ -1,0 +1,203 @@
+/* General reset and basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #222;
+    color: white;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin-left: auto; /* This will push the button to the right */
+}
+
+.nav-links li {
+    margin: 0 1rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #61dafb;
+}
+
+.buy-btn {
+    padding: 0.7rem 1.5rem;
+    background-color: #32c671;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 50px;
+    text-decoration: none;
+}
+
+.buy-btn:hover {
+    background-color: #28a85c;
+}
+
+/* Hero Section */
+.hero {
+    height: 90vh;
+    background: url('./Pictures/landing.jpg') no-repeat center center/cover;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0; /* Initially hidden */
+    animation: fadeIn 1s forwards; /* Fade in animation */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.hero-text {
+    max-width: 700px;
+    opacity: 0; /* Initially hidden */
+    animation: fadeInText 1s forwards 0.5s; /* Fade in text animation */
+}
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.welcome-text h1,
+.welcome-text p {
+    opacity: 0; /* Initially hidden */
+    animation: slideIn 0.5s forwards; /* Slide in animation */
+}
+
+.welcome-text h1 {
+    animation-delay: 1s; /* Delay for the title */
+    font-size: 3rem;
+    margin-bottom: 1rem;
+
+}
+
+.welcome-text p {
+    animation-delay: 2.5s; /* Delay for the paragraph */
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.cta-buttons {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center buttons horizontally */
+    margin-top: 20px; /* Space between the text and buttons */
+}
+
+.learn-more-btn, .get-started-btn {
+    margin: 0 5px; /* Add spacing between buttons */
+    opacity: 0; /* Initially hidden */
+    animation: fadeInButtons 1.5s forwards; /* Fade in buttons */
+}
+
+.learn-more-btn {
+    animation-delay: 2.5s; /* Delay for Learn More button */
+}
+
+.get-started-btn {
+    animation-delay: 2.5s; /* Delay for Get Started button */
+}
+
+@keyframes fadeInButtons {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.cta-buttons button {
+    padding: 0.8rem 2rem;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 50px;
+}
+
+.learn-more-btn {
+    display: inline-block; /* Makes the anchor behave like a block element */
+    padding: 10px 20px; /* Adds padding for button size */
+    background-color: transparent; /* Transparent background */
+    border: 2px solid white; /* White border */
+    color: white; /* White text color */
+    text-align: center; /* Centers the text inside */
+    text-decoration: none; /* Removes the underline */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1rem; /* Font size */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s; /* Transitions for hover effect */
+    cursor: pointer; /* Changes cursor to pointer */
+}
+
+.learn-more-btn:hover {
+    background-color: white; /* Background turns white on hover */
+    color: #000; /* Text color changes to black on hover */
+    transform: translateY(-2px); /* Slightly lifts the button on hover */
+}
+
+.get-started-btn {
+    background-color: #32c671;
+    color: white;
+    border-radius: 50px;
+    text-decoration: none;
+    padding: 0.7rem 1.5rem;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.get-started-btn:hover {
+    background-color: #2c3e8d;
+}

@@ -6,7 +6,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background: url(/others/ion-fet-C4G18Paw0d4-unsplash.jpg) no-repeat center center fixed;
+    background: url('../others/class.jpg') no-repeat center center fixed;
     background-size: cover;
     display: flex;
     justify-content: center;

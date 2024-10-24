@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    background-image: url('./Pictures/contact.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.5s ease-in-out;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #222;
+    color: white;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin-left: auto; /* This will push the button to the right */
+}
+
+.nav-links li {
+    margin: 0 1rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #61dafb;
+}
+
+.buy-btn {
+    padding: 0.7rem 1.5rem;
+    background-color: #32c671;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 50px;
+    text-decoration: none;
+}
+
+.buy-btn:hover {
+    background-color: #28a85c;
+}
+
+
+.active {
+    background-color: #7A694A;
+}
+
+.contact-section {
+    padding: 2rem;
+    background-color: #fff;
+    margin: 2rem auto;
+    max-width: 800px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-container h1 {
+    color: #23553F;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.contact-form-container form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+
+.contact-form-container label {
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+.contact-form-container input,
+.contact-form-container textarea {
+    padding: 0.75rem;
+    margin-top: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contact-form-container button {
+    padding: 1rem;
+    margin-top: 1rem;
+    background-color: #23553F;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.contact-form-container button:hover {
+    background-color: #142221;
+}
+
+.contact-info h2,
+.contact-info p {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.social-link {
+    display: inline-block;
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #142221;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.social-link:hover {
+    background-color: #23553F;
+}
+
+/* About Developer Section */
+.about-developer {
+    background-color: #23553F;
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.about-developer h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.about-developer p {
+    font-size: 1.2rem;
+}
+
+footer {
+    background-color: #142221;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+#successMessage {
+    background-color: #dff0d8;
+    color: #3c763d;
+    border: 1px solid #d6e9c6;
+    padding: 1rem;
+    text-align: center;
+    margin-top: 2rem;
+    border-radius: 5px;
+}
+
+#successMessage h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}

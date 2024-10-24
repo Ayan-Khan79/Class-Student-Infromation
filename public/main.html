@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Student Information</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <!-- Main Content Section (Initially hidden) -->
+    <div id="mainContent">
+        <div class="container">
+            <h1 class="heading">Class Student Information</h1>
+            <button type="button" id="closeStudentForm">&times;</button>
+
+            <!-- User role selection -->
+            <button class="button" id="studentBtn">Student</button>
+            <button class="button" id="teacherBtn">Teacher</button>
+
+            <!-- Teacher PIN input -->
+            <form id="pinForm" style="display: none;">
+                <input type="password" id="pinInput" placeholder="Enter 4-digit PIN">
+                <button type="button" id="submitPinBtn" class="button">Submit PIN</button>
+            </form>
+
+            <!-- Add student form -->
+            <form id="studentForm" enctype="multipart/form-data" style="display: none;">
+                <input type="text" id="name" placeholder="Student Name" required>
+                <input type="text" id="rollno" placeholder="Admission Number" required>
+                <input type="text" id="section" placeholder="Section" required>
+                <input type="email" id="gmail" placeholder="Enter Gmail" required>
+                <input type="file" id="photo" accept="image/*" required>
+                <button type="submit" class="button">Register Student</button>
+            </form>
+
+            <!-- Teacher's actions -->
+            <div id="teacherActions" class="hidden">
+                <button class="button" id="addStudentBtn">Add Student</button>
+                <button class="button" id="searchStudentBtn">Search Student</button>
+                <button class="button" id="toggleStudentListBtn">Show Students List</button>
+
+                <!-- Search student form -->
+                <form id="searchForm" style="display: none;">
+                    <input type="text" id="searchInput" placeholder="Search by Name or Roll Number">
+                    <button type="button" id="searchButton" class="button">Search</button>
+                </form>
+
+                <!-- Search results -->
+                <div id="searchResultContainer" class="hidden">
+                    <h2>Search Results</h2>
+                    <ul id="searchResults"></ul>
+                    <img src="" alt="Student Image" id="studentImage" style="display:none;">
+                </div>
+
+                <!-- Student list -->
+                <div id="studentListContainer" style="display: none;">
+                    <h2>Students List</h2>
+                    <ul id="studentList"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./main.js"></script>
+</body>
+</html>

@@ -94,10 +94,34 @@ app.get('/searchStudents', async (req, res) => {
     }
 });
 
-// Root route to serve index.html
+// Root route to serve landing.html
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/public/index.html');
+    res.sendFile(path.join(__dirname,'public','index.html'));
+}); 
+
+app.get('/aboutus', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'aboutus.html')); // Ensure you have aboutus.html in the public directory
 });
+
+app.get('/home', (req,res) => {
+    res.sendFile(path.join(__dirname,'public','index.html'));
+});
+
+app.get('/services', (req,res) => {
+    res.sendFile(path.join(__dirname,'public','services.html'));
+});
+
+app.get('/learnmore', (req,res) => {
+    res.sendFile(path.join(__dirname,'public','learnmore.html'));
+});
+
+app.get('/contact', (req,res) => {
+    res.sendFile(path.join(__dirname,'public','contact.html'));
+});
+
+app.get('/getstarted', (req,res) => {
+    res.sendFile(path.join(__dirname,'public','main.html'));
+})
 
 // Start the server
 app.listen(PORT, () => {
