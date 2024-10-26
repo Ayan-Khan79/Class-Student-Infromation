@@ -23,8 +23,36 @@ body {
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
+    position: relative;
+}
+
+.logo a {
+    text-decoration: none; /* Remove underline */
+    color: white; /* Text color */
+    font-size: 1.5rem; /* Font size similar to a heading */
+    font-weight: bold; /* Bold text */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.logo a:hover {
+    color: #61dafb; /* Change color on hover */
+}
+
+/* Underline effect for the logo link */
+.logo a::after {
+    content: ''; /* Creates a pseudo-element */
+    position: absolute; /* Position it relative to the logo */
+    left: 0; /* Align to the left */
+    bottom: -5px; /* Position below the text */
+    height: 2px; /* Height of the line */
+    width: 100%; /* Full width */
+    background-color: #61dafb; /* Color of the line */
+    transform: scaleX(0); /* Initially hidden */
+    transition: transform 0.3s ease; /* Transition for the line */
+}
+
+.logo a:hover::after {
+    transform: scaleX(1); /* Scale to full width on hover */
 }
 
 .nav-links {
@@ -41,11 +69,29 @@ body {
     text-decoration: none;
     color: white;
     font-size: 1rem;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease,;
+    position: relative;
 }
 
 .nav-links a:hover {
     color: #61dafb;
+}
+
+/* Bottom Border on Hover */
+.nav-links a::after {
+    content: ''; /* Creates a pseudo-element */
+    position: absolute; /* Position it relative to the parent */
+    left: 0; /* Align to the left */
+    bottom: -5px; /* Position below the text */
+    height: 2px; /* Height of the line */
+    width: 100%; /* Full width */
+    background-color: #61dafb; /* Color of the line */
+    transform: scaleX(0); /* Initially hidden */
+    transition: transform 0.3s ease; /* Transition for the line */
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1); /* Scale to full width on hover */
 }
 
 .buy-btn {
@@ -55,13 +101,16 @@ body {
     color: white;
     font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
     border-radius: 50px;
     text-decoration: none;
+    box-shadow: 0 4px 10px rgb(0, 0, 0,0.2);
 }
 
 .buy-btn:hover {
     background-color: #28a85c;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgb(0, 0, 0,0.3);
 }
 
 /* Main Container */
@@ -76,10 +125,61 @@ body {
     margin: 70px auto; /* Centered */
 }
 
+/* General Styles for Headings */
 h1 {
-    text-align: center;
-    margin-bottom: 1.5rem;
-    animation: slideIn 1s ease-in-out;
+    text-align: center; /* Center the heading text */
+    color: rgb(4, 0, 0); /* Set initial color to white */
+    margin: 40px 0; /* Adjust margin for spacing above and below the heading */
+    font-size: 4rem; /* Adjust font size as needed */
+    transition: color 0.3s ease; /* Smooth color transition */
+    position: relative; /* Required for the pseudo-element */
+}
+
+h1:hover {
+    color: #32c671; /* Change color on hover */
+}
+
+h1::after {
+    content: ""; /* Create a pseudo-element */
+    display: block; /* Make it a block element */
+    width: 50%; /* Width of the line */
+    height: 2px; /* Thickness of the line */
+    background-color: #32c671; /* Line color */
+    margin: 10px auto 0; /* Center the line */
+    opacity: 0; /* Start with no visibility */
+    transition: opacity 0.3s ease; /* Smooth transition for visibility */
+}
+
+h1:hover::after {
+    opacity: 1; /* Show the line on hover */
+}
+
+/* Styles for h2 headings */
+h2 {
+    text-align: center; /* Center the heading text */
+    margin-bottom: 20px; /* Space below the heading */
+    color: #333; /* Default text color */
+    transition: color 0.3s ease; /* Smooth color transition */
+    position: relative; /* Required for the pseudo-element */
+}
+
+h2:hover {
+    color: #32c671; /* Change color on hover */
+}
+
+h2::after {
+    content: ""; /* Create a pseudo-element */
+    display: block; /* Make it a block element */
+    width: 50%; /* Width of the line */
+    height: 2px; /* Thickness of the line */
+    background-color: #32c671; /* Line color */
+    margin: 10px auto 0; /* Center the line */
+    opacity: 0; /* Start with no visibility */
+    transition: opacity 0.3s ease; /* Smooth transition for visibility */
+}
+
+h2:hover::after {
+    opacity: 1; /* Show the line on hover */
 }
 
 section {
@@ -94,12 +194,6 @@ section {
 section:hover {
     transform: scale(1.02);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-h2 {
-    margin-bottom: 1rem;
-    color: #333;
-    animation: fadeInUp 0.5s ease-in-out;
 }
 
 ul {
