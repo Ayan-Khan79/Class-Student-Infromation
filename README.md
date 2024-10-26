@@ -1,12 +1,26 @@
 ## 📚 Class Student Management System
 A simple yet powerful Class Student Management System that enables students to register themselves and allows professors to manage and view student details effortlessly. Built using HTML, CSS, JavaScript, and PostgreSQL, this system streamlines class management for both students and faculty.
 
-## 🎯 Features
-Student Registration: Students can sign up and manage their information.
+
+## 🎥 Demo Video
+[Watch the Demo Video](https://drive.google.com/file/d/1p4YWZHXSieqiuV9MJaF17kn7Y4Sdrw5k/view?usp=sharing) to see the Class Student Management System in action!
+The video provides a walkthrough of the following key features:
+
+
+Student Registration: How students can easily register and manage their profiles.
 Professor Portal:
-Search: Find specific students by name or ID.
-View All Students: View a complete list of registered students.
-Register Students: Add students directly from the professor's portal.
+Searching for students by name or ID.
+Viewing the complete student list.
+Registering new students directly from the portal.
+
+## 🎯 Features
+**Student Registration:**
+- Students can sign up and manage their information.
+
+**Professor Portal:**
+- Search: Find specific students by name or ID.
+- View All Students: View a complete list of registered students.
+- Register Students: Add students directly from the professor's portal.
 
 
 ## 🛠️ Tech Stack
@@ -66,7 +80,36 @@ PostgreSQL (for managing the database)
 ## **Contact Page**
 ![image](https://github.com/user-attachments/assets/02b67f8b-cff5-4d4e-a68b-0dd42db85bd1)
 
-## **Learn More
+## **Learn More**
+![image](https://github.com/user-attachments/assets/e1a1170a-1cbb-4e01-8174-7e75d15c02c2)
+
+
+## 🌱 Future Enhancements
+- Enhanced Search: Additional filters for sorting and advanced search criteria.
+- Notification System: Email notifications upon successful student registration.
+- Admin Role: Add an administrator role for higher-level management.
+
+## 🤝 Contributing
+We welcome contributions! Feel free to fork this repository, submit pull requests, or report issues.
+
+**Steps to Contribute**
+1.Fork the repository.
+2.Create your feature branch:
+
+      git checkout -b feature-name
+3.Commit your changes:
+
+      git commit -m "Add new feature"
+4.Push to the branch:
+
+      git push origin feature-name
+5.Open a pull request.
+
+## 📝 License
+This project is licensed under the MIT License.
+
+
+
 
 
 
