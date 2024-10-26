@@ -23,8 +23,36 @@ body {
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
+    position: relative;
+}
+
+.logo a {
+    text-decoration: none; /* Remove underline */
+    color: white; /* Text color */
+    font-size: 1.5rem; /* Font size similar to a heading */
+    font-weight: bold; /* Bold text */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.logo a:hover {
+    color: #61dafb; /* Change color on hover */
+}
+
+/* Underline effect for the logo link */
+.logo a::after {
+    content: ''; /* Creates a pseudo-element */
+    position: absolute; /* Position it relative to the logo */
+    left: 0; /* Align to the left */
+    bottom: -5px; /* Position below the text */
+    height: 2px; /* Height of the line */
+    width: 100%; /* Full width */
+    background-color: #61dafb; /* Color of the line */
+    transform: scaleX(0); /* Initially hidden */
+    transition: transform 0.3s ease; /* Transition for the line */
+}
+
+.logo a:hover::after {
+    transform: scaleX(1); /* Scale to full width on hover */
 }
 
 .nav-links {
@@ -77,11 +105,67 @@ body {
 }
 
 h1 {
-    text-align: center;
-    margin-bottom: 1.5rem;
-    animation: slideIn 1s ease-in-out;
+    text-align: center; /* Center the main heading */
+    margin-bottom: 20px; /* Space below the heading */
+    font-size: 2.5rem; /* Font size for main heading */
+    color: #333; /* Dark color for visibility */
+    position: relative; /* Position relative for pseudo-element */
+    transition: color 0.3s ease; /* Smooth color transition */
 }
 
+h1:hover {
+    color: #32c671; /* Change color on hover */
+}
+
+h1::after {
+    content: ""; /* Create a pseudo-element */
+    display: block; /* Make it a block element */
+    width: 50%; /* Width of the line */
+    height: 2px; /* Thickness of the line */
+    background-color: #32c671; /* Line color */
+    margin: 10px auto 0; /* Center the line */
+    opacity: 0; /* Start with no visibility */
+    transition: opacity 0.3s ease; /* Smooth transition */
+}
+
+h1:hover::after {
+    opacity: 1; /* Show the line on hover */
+}
+
+h2 {
+    position: relative;
+    text-align: center; /* Center the subheadings */
+    font-size: 2rem; /* Font size for subheadings */
+    margin-top: 20px; /* Space above subheadings */
+    color: #444; /* Darker gray for subheadings */
+    padding-bottom: 10px; /* Space below subheading */
+}
+
+h2:hover {
+    color: #32c671; /* Change color on hover */
+}
+
+h2::after {
+    content: ""; /* Create a pseudo-element */
+    display: block; /* Make it a block element */
+    width: 50%; /* Width of the line */
+    height: 2px; /* Thickness of the line */
+    background-color: #32c671; /* Line color */
+    margin: 10px auto 0; /* Center the line */
+    opacity: 0; /* Start with no visibility */
+    transition: opacity 0.3s ease; /* Smooth transition for visibility */
+}
+
+h2:hover::after {
+    opacity: 1; /* Show the line on hover */
+}
+
+h3 {
+    text-align: center; /* Center the developer section headings */
+    font-size: 1.5rem; /* Font size for developer section headings */
+    margin-top: 15px; /* Space above developer headings */
+    color: #555; /* Lighter gray for developer names */
+}
 section {
     margin: 2rem 0;
     padding: 1.5rem;
@@ -99,13 +183,6 @@ section:hover {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-h2 {
-    margin-bottom: 1rem;
-    color: #333;
-    animation: fadeInUp 0.5s ease-in-out;
-    margin-top: 1rem;
-}
-
 ul {
     list-style: none;
 }
@@ -113,6 +190,22 @@ ul {
 .faq-item {
     margin-top: 1rem;
     animation: fadeInUp 0.5s ease-in-out;
+}
+
+.social-links {
+    display: flex; /* Use flexbox to arrange icons horizontally */
+    margin-top: 10px; /* Space above the icons */
+}
+
+.social-icon {
+    width: 30px; /* Set a uniform width for icons */
+    height: 30px; /* Set a uniform height for icons */
+    margin-right: 10px; /* Space between icons */
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.social-icon:hover {
+    transform: scale(1.1); /* Slightly enlarge icon on hover */
 }
 
 /* Animations */

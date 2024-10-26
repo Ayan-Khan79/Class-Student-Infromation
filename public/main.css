@@ -1,0 +1,505 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: url(./Pictures/student.jpg) no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}
+/* Navigation Bar */
+.navbar {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Space out logo and nav links */
+    align-items: center; /* Center items vertically */
+    padding: 1rem 2rem; /* Add padding around the navbar */
+    background-color: rgba(34, 34, 34, 0.8); /* Slightly transparent background */
+    color: white; /* Text color */
+    position: fixed; /* Fixes the navbar at the top */
+    width: 100%; /* Ensures the navbar takes full width */
+    top: 0; /* Positions navbar at the top of the page */
+    z-index: 1000; /* Ensures navbar appears above other elements */
+}
+
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin-left: auto; /* This will push the button to the right */
+}
+
+.nav-links li {
+    margin: 0 1rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    position: relative;
+}
+
+.nav-links a:hover {
+    color: #61dafb;
+}
+
+/* Bottom Border on Hover */
+.nav-links a::after {
+    content: ''; /* Creates a pseudo-element */
+    position: absolute; /* Position it relative to the parent */
+    left: 0; /* Align to the left */
+    bottom: -5px; /* Position below the text */
+    height: 2px; /* Height of the line */
+    width: 100%; /* Full width */
+    background-color: #61dafb; /* Color of the line */
+    transform: scaleX(0); /* Initially hidden */
+    transition: transform 0.3s ease; /* Transition for the line */
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1); /* Scale to full width on hover */
+}
+
+
+
+.logo {
+    position: relative;
+}
+
+.logo a {
+    text-decoration: none; /* Remove underline */
+    color: white; /* Text color */
+    font-size: 1.5rem; /* Font size similar to a heading */
+    font-weight: bold; /* Bold text */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.logo a:hover {
+    color: #61dafb; /* Change color on hover */
+}
+
+/* Underline effect for the logo link */
+.logo a::after {
+    content: ''; /* Creates a pseudo-element */
+    position: absolute; /* Position it relative to the logo */
+    left: 0; /* Align to the left */
+    bottom: -5px; /* Position below the text */
+    height: 2px; /* Height of the line */
+    width: 100%; /* Full width */
+    background-color: #61dafb; /* Color of the line */
+    transform: scaleX(0); /* Initially hidden */
+    transition: transform 0.3s ease; /* Transition for the line */
+}
+
+.logo a:hover::after {
+    transform: scaleX(1); /* Scale to full width on hover */
+}
+
+.nav-links {
+    display: flex; /* Use flexbox for the list items */
+    list-style: none; /* Remove default list styling */
+    margin-left: auto; /* Pushes the links to the right */
+}
+
+.nav-links li {
+    margin: 0 1rem; /* Space between each link */
+}
+
+.nav-links a {
+    text-decoration: none; /* Remove underline from links */
+    color: white; /* Link color */
+    font-size: 1rem; /* Font size for links */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.nav-links a:hover {
+    color: #61dafb; /* Change color on hover */
+}
+
+.container {
+   
+    background: linear-gradient(135deg, #13191B 0%, #222523 0%, #70665B 0%, #1B2020 0%, #AF9880 100%);
+padding: 30px;
+border-radius: 15px;
+ box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+max-width: 500px;
+width: 100%;
+transition: transform 0.4s ease, opacity 0.4s ease;
+opacity: 0;
+transform: translateY(50px);
+animation: slideUpFadeIn 1s forwards;
+margin-top: 130px;
+overflow-x: auto;
+
+}
+
+@keyframes slideUpFadeIn {
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+.heading {
+text-align: center;
+font-size: 28px;
+font-weight: bold;
+background: whitesmoke;
+background-clip: text;
+-webkit-background-clip: text;
+color: transparent; /* Makes the gradient visible in the text */
+text-transform: uppercase;
+letter-spacing: 2px;
+margin-bottom: 20px;
+animation: fade-in 1.5s ease-in-out forwards;
+text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes fade-in {
+from {
+opacity: 0;
+transform: translateY(-10px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+
+.button {
+    padding: 12px 20px;
+    background-color: #32c671;
+
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    margin: 10px auto; /* Centering the buttons */
+    display: block; /* Ensuring buttons are block-level */
+    width: 80%; /* Giving buttons a uniform width */
+}
+
+.button:hover {
+    background-color: #28A85C;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1.5px;
+}
+
+.button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+
+form {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    opacity: 0;
+    animation: slide-in 0.5s forwards;
+}
+
+@keyframes slide-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+#studentListContainer {
+    display: none;
+    margin-top: 20px;
+}
+
+#studentList {
+    list-style: none;
+}
+
+#studentList li {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    position: relative;
+    animation: fade-in 0.5s ease-in-out;
+}
+
+#studentList li button {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+#studentList li button:hover {
+    background-color: darkred;
+}
+
+#searchResultContainer ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#searchResults li {
+    background-color: #ffc107;
+    color: #333;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    position: relative;
+    animation: fade-in 0.5s ease-in-out;
+}
+
+#pinForm {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.hidden {
+    display: none;
+}
+#closeStudentForm {
+display: none; /* Initially hidden */
+position: absolute;
+top: 10px;
+right: 10px;
+background: none;
+border: none;
+font-size: 20px;
+cursor: pointer;
+color: red;
+}
+#studentListContainer {
+display: none;
+margin-top: 20px;
+}
+
+#studentList {
+list-style: none;
+}
+
+#studentList li {
+display: flex;
+align-items: center;
+gap: 5px; /* Adjusts space between photo and text */
+background-color: #007bff;
+color: white;
+padding: 10px;
+border-radius: 4px;
+margin-bottom: 10px;
+position: relative;
+animation: fade-in 0.5s ease-in-out;
+}
+
+#studentList li button {
+position: absolute;
+right: 10px;
+top: 10px;
+background-color: red;
+border: none;
+color: white;
+padding: 5px;
+cursor: pointer;
+border-radius: 50%;
+transition: background-color 0.3s ease;
+}
+
+#studentList li button:hover {
+background-color: darkred;
+}
+
+.search-results .delete-btn {
+background-color: transparent;
+border: none;
+color: #ff4d4d;
+font-size: 16px;
+cursor: pointer;
+margin-left: 10px;
+transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.search-results .delete-btn:hover {
+color: #ff1a1a;
+transform: scale(1.2);
+}
+.who-i-am-heading {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    animation: fade-in 1s forwards;
+}
+
+.options {
+    display: flex;
+    justify-content: space-around; /* Space out the options */
+}
+
+.option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+    gap: 20px;
+}
+
+.option:hover {
+    transform: scale(1.05);
+}
+
+.icon {
+    width: 80px; /* Increased width for larger icons */
+    height: 80px; /* Increased height for larger icons */
+    border-radius: 50%; /* Makes the icon circular */
+    background-color: #32c671; /* Background color for the circle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px; /* Space between icon and button */
+    transition: transform 0.3s ease;
+}
+
+.icon img {
+    max-width: 60%; /* Adjusts the size of the icon image within the circle */
+    max-height: 60%;
+    transition: transform 0.3s ease;
+}
+
+.icon:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+.teacherBtn,.studentBtn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    background-color: #32c671;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 10px; /* Added margin for spacing between buttons */
+margin-left: 10px;
+margin-right: 10px;
+}
+
+.option-button:hover {
+    background-color: #28A85C;
+    transform: translateY(-3px); /* Slight lift effect */
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.icon {
+    width: 80px; /* Increased width for larger icons */
+    height: 80px; /* Increased height for larger icons */
+    border-radius: 50%; /* Makes the icon circular */
+    background-color: #32c671; /* Background color for the circle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px; /* Space between icon and button */
+    transition: transform 0.3s ease;
+    margin-left: 35px;
+}
+
+.icon img {
+    max-width: 60%; /* Adjusts the size of the icon image within the circle */
+    max-height: 60%;
+    transition: transform 0.3s ease;
+}
+
+.icon:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+.options {
+    display: flex;
+    justify-content: space-around; /* Space out the options */
+}
+
+.option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+    gap: 20px;
+}
+
+.option:hover {
+    transform: scale(1.05);
+}
+.option-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    background-color: #32c671;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 10px; /* Added margin for spacing between buttons */
+margin-left:30px;
+margin-right: 30px;
+}
+
+.option-button:hover {
+    background-color: #28A85C;
+    transform: translateY(-3px); /* Slight lift effect */
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -22,8 +22,36 @@ body {
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
+    position: relative;
+}
+
+.logo a {
+    text-decoration: none; /* Remove underline */
+    color: white; /* Text color */
+    font-size: 1.5rem; /* Font size similar to a heading */
+    font-weight: bold; /* Bold text */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.logo a:hover {
+    color: #61dafb; /* Change color on hover */
+}
+
+/* Underline effect for the logo link */
+.logo a::after {
+    content: ''; /* Creates a pseudo-element */
+    position: absolute; /* Position it relative to the logo */
+    left: 0; /* Align to the left */
+    bottom: -5px; /* Position below the text */
+    height: 2px; /* Height of the line */
+    width: 100%; /* Full width */
+    background-color: #61dafb; /* Color of the line */
+    transform: scaleX(0); /* Initially hidden */
+    transition: transform 0.3s ease; /* Transition for the line */
+}
+
+.logo a:hover::after {
+    transform: scaleX(1); /* Scale to full width on hover */
 }
 
 .nav-links {
@@ -40,11 +68,29 @@ body {
     text-decoration: none;
     color: white;
     font-size: 1rem;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    position: relative;
 }
 
 .nav-links a:hover {
     color: #61dafb;
+}
+
+/* Bottom Border on Hover */
+.nav-links a::after {
+    content: ''; /* Creates a pseudo-element */
+    position: absolute; /* Position it relative to the parent */
+    left: 0; /* Align to the left */
+    bottom: -5px; /* Position below the text */
+    height: 2px; /* Height of the line */
+    width: 100%; /* Full width */
+    background-color: #61dafb; /* Color of the line */
+    transform: scaleX(0); /* Initially hidden */
+    transition: transform 0.3s ease; /* Transition for the line */
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1); /* Scale to full width on hover */
 }
 
 .buy-btn {
@@ -54,13 +100,16 @@ body {
     color: white;
     font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
     border-radius: 50px;
     text-decoration: none;
+    box-shadow: 0 4px 10px rgb(0, 0, 0,0.2);
 }
 
 .buy-btn:hover {
     background-color: #28a85c;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgb(0, 0, 0,0.3);
 }
 
 /* Hero Section */
@@ -89,6 +138,34 @@ body {
     max-width: 700px;
     opacity: 0; /* Initially hidden */
     animation: fadeInText 1s forwards 0.5s; /* Fade in text animation */
+}
+
+.hero-text h1 {
+    opacity: 0; /* Initially hidden */
+    animation: slideIn 0.5s forwards; /* Slide in animation */
+    position: relative;
+    transition: text-shadow 0.3s ease; /* Transition for the text shadow */
+}
+
+.hero-text h1:hover {
+    text-shadow: 4px 4px 20px rgba(173, 216, 280, 0.8); /* Shadow effect on hover */
+}
+
+/* Underline effect for the h1 */
+.hero-text h1::after {
+    content: ''; /* Creates a pseudo-element */
+    position: absolute; /* Position it relative to the heading */
+    left: 0; /* Align to the left */
+    bottom: -5px; /* Position below the text */
+    height: 2px; /* Height of the line */
+    width: 100%; /* Full width */
+    background-color: white; /* Color of the underline */
+    transform: scaleX(0); /* Initially hidden */
+    transition: transform 0.3s ease; /* Transition for the underline */
+}
+
+.hero-text h1:hover::after {
+    transform: scaleX(1); /* Scale to full width on hover */
 }
 
 @keyframes fadeInText {
@@ -195,9 +272,12 @@ body {
     border: none;
     font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .get-started-btn:hover {
     background-color: #2c3e8d;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }

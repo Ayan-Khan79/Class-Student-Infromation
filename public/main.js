@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const studentForm = document.getElementById('studentForm');
     const teacherActions = document.getElementById('teacherActions');
     const closeStudentForm = document.getElementById('closeStudentForm');
+    const heading1 = document.getElementById('first');
+    const heading2 = document.getElementById('second');
 
     // Define the unique 4-digit teacher PIN
     const teacherPIN = '1234';
@@ -25,6 +27,10 @@ document.addEventListener('DOMContentLoaded', () => {
         teacherBtn.style.display = 'none'; // Hide teacher button
         closeStudentForm.style.display = 'block';
         closeStudentForm.setAttribute('data-role', 'student'); // Add a data attribute to track the form type
+        heading1.style.display = 'none';
+        heading2.style.display = 'block';
+        document.getElementById('student icon').style.display = 'none';
+        document.getElementById('teacher icon').style.display = 'none';
     });
 
     // Event listener for teacher button
@@ -36,6 +42,10 @@ document.addEventListener('DOMContentLoaded', () => {
         teacherBtn.style.display = 'none'; // Hide teacher button
         closeStudentForm.style.display = 'block';
         closeStudentForm.setAttribute('data-role', 'teacher'); // Add a data attribute to track the form type
+        heading1.style.display = 'none';
+        heading2.style.display = 'block';
+        document.getElementById('student icon').style.display = 'none';
+        document.getElementById('teacher icon').style.display = 'none';
 
         resetSearch();
     });
@@ -50,6 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             alert('Incorrect PIN. Access denied.');
         }
+        document.getElementById('pinInput').value = ''; // Clear input field
     });
 
     // Add student functionality
@@ -177,6 +188,17 @@ document.getElementById('searchButton').addEventListener('click', async function
                 // Create a text node for student information
                 const textNode = document.createTextNode(`${student.name} (Roll No: ${student.rollno}, Section: ${student.section}, Gmail: ${student.gmail})`);
                 li.appendChild(textNode);
+                
+                // Create the "X" button to remove the student
+                const deleteBtn = document.createElement('button');
+                deleteBtn.textContent = 'X';
+                deleteBtn.style.marginLeft = '10px';
+                deleteBtn.addEventListener('click', function () {
+                    searchResults.removeChild(li); // Remove the student from the list
+                });
+
+                li.appendChild(deleteBtn); // Append the "X" button to the list item
+                searchResults.appendChild(li);
 
                 // Append the list item to the results
                 searchResults.appendChild(li);
