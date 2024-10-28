@@ -137,8 +137,9 @@ transition: transform 0.4s ease, opacity 0.4s ease;
 opacity: 0;
 transform: translateY(50px);
 animation: slideUpFadeIn 1s forwards;
-margin-top: 130px;
+margin-top: 100px;
 overflow-x: auto;
+max-height:500px;
 
 }
 
@@ -239,11 +240,15 @@ input:focus {
 
 #studentListContainer {
     display: none;
-    margin-top: 20px;
+    margin-top: 200px;
+    max-height: min-content;
+
 }
 
 #studentList {
     list-style: none;
+    margin-top: 0px;
+    max-height:min-content;
 }
 
 #studentList li {
@@ -310,7 +315,7 @@ color: red;
 }
 #studentListContainer {
 display: none;
-margin-top: 20px;
+margin-top:auto;
 }
 
 #studentList {
@@ -417,8 +422,8 @@ transform: scale(1.2);
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
     margin-top: 10px; /* Added margin for spacing between buttons */
-margin-left: 10px;
-margin-right: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .option-button:hover {
@@ -484,8 +489,8 @@ margin-right: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
     margin-top: 10px; /* Added margin for spacing between buttons */
-margin-left:30px;
-margin-right: 30px;
+    margin-left:30px;
+    margin-right: 30px;
 }
 
 .option-button:hover {
@@ -502,4 +507,9 @@ margin-right: 30px;
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+#studentListContainer img {
+    display: inline-block;
+    visibility: visible;
 }

@@ -3,6 +3,7 @@ const { Pool } = require('pg');
 const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
+const isProduction = process.env.NODE_ENV === 'production';
 
 
 const app = express();
@@ -29,11 +30,11 @@ const upload = multer({ storage: storage });
 
 // PostgreSQL connection
 const pool = new Pool({
-    user: 'postgres',
-    host: 'localhost',
-    database: 'student_management',
-    password: 'Ayan7905@',
-    port: 5432,
+    user: isProduction ? process.env.DB_USER : 'postgres',
+    host: isProduction ? process.env.DB_HOST : 'localhost',
+    database: isProduction ? process.env.DB_DATABASE : 'student_management',
+    password: isProduction ? process.env.DB_PASSWORD : 'Ayan7905@',
+    port: isProduction ? process.env.DB_PORT : 5432,
 });
 
 pool.connect();

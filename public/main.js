@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeStudentForm = document.getElementById('closeStudentForm');
     const heading1 = document.getElementById('first');
     const heading2 = document.getElementById('second');
+    const opt=document.getElementById('opt');
 
     // Define the unique 4-digit teacher PIN
     const teacherPIN = '1234';
@@ -77,11 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
         resetSearch();
     });
 
-    // Toggle student list visibility
-    document.getElementById('toggleStudentListBtn').addEventListener('click', function () {
-        const studentListContainer = document.getElementById('studentListContainer');
-        studentListContainer.style.display = studentListContainer.style.display === 'none' ? 'block' : 'none';
-    });
+   
 
     // Handle student registration and image upload
     studentForm.addEventListener('submit', async function (event) {
@@ -147,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Event listener for search button
-document.getElementById('searchButton').addEventListener('click', async function () {
+    document.getElementById('searchButton').addEventListener('click', async function () {
     const searchTerm = document.getElementById('searchInput').value.toLowerCase();
 
     try {
@@ -216,8 +213,7 @@ document.getElementById('searchButton').addEventListener('click', async function
     }
 });
 
-
-    // Toggle student list visibility and fetch student data
+   // Toggle student list visibility and fetch student data
     document.getElementById('toggleStudentListBtn').addEventListener('click', async function () {
         const studentListContainer = document.getElementById('studentListContainer');
         const studentList = document.getElementById('studentList');
@@ -231,17 +227,23 @@ document.getElementById('searchButton').addEventListener('click', async function
                 // Check if students were retrieved successfully
                 if (students.length > 0) {
                     students.forEach(student => {
+                        console.log(student);
                         const li = document.createElement('li');
                         
                         // Create image element for student photo
                         const img = document.createElement('img');
-                        img.src = student.photo; // Get photo URL from the database
+                        
+                        // Assuming the photo field in the database contains the file name
+                        img.src = student.photo; // Get photo path from the result
+                        img.alt = `Photo of ${student.name}`;
                         img.style.width = '50px';
                         img.style.height = '50px';
                         img.style.objectFit = 'cover';
                         img.style.borderRadius = '50%';
                         img.style.marginRight = '20px';
-                        li.appendChild(img); // Append image to the list item
+
+                        // Add image to list item
+                        li.appendChild(img);
 
                         li.textContent = `${student.name} (Roll No: ${student.rollno}, Section: ${student.section}, Gmail: ${student.gmail})`;
                         studentList.appendChild(li);
@@ -260,17 +262,31 @@ document.getElementById('searchButton').addEventListener('click', async function
         }
     });
 
-    // Close form event listener
-    closeStudentForm.addEventListener('click', () => {
-        const role = closeStudentForm.getAttribute('data-role');
-        if (role === 'student') {
-            studentForm.style.display = 'none';
-        } else {
-            pinForm.style.display = 'none';
-        }
-        studentBtn.style.display = 'inline-block'; // Show student button again
-        teacherBtn.style.display = 'inline-block'; // Show teacher button again
-        closeStudentForm.style.display = 'none';
-    });
+
+closeStudentForm.addEventListener('click', () => {
+    const role = closeStudentForm.getAttribute('data-role');
+    
+    if (role === 'student') {
+        studentForm.style.display = 'none'; // Hide student form
+        studentBtn.style.display = 'block'; // Show student button
+        teacherBtn.style.display = 'block'; // Show teacher button
+        heading1.style.display = 'block'; // Show original heading
+        heading2.style.display = 'none'; // Hide secondary heading
+        document.getElementById('student icon').style.display = 'block';
+        document.getElementById('teacher icon').style.display = 'block';
+    } else if (role === 'teacher') {
+        pinForm.style.display = 'none'; // Hide teacher PIN form
+        studentBtn.style.display = 'inline-block'; // Show student button
+        teacherBtn.style.display = 'inline-block'; // Show teacher button
+        heading1.style.display = 'block'; // Show original heading
+        heading2.style.display = 'none'; // Hide secondary heading
+        document.getElementById('student icon').style.display = 'block';
+        document.getElementById('teacher icon').style.display = 'block';
+    }
+    
+    closeStudentForm.style.display = 'none'; // Hide the close button
+});
+
+
 });
 
