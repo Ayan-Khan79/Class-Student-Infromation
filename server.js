@@ -35,6 +35,7 @@ const pool = new Pool({
     database: isProduction ? process.env.DB_DATABASE : 'student_management',
     password: isProduction ? process.env.DB_PASSWORD : 'Ayan7905@',
     port: isProduction ? process.env.DB_PORT : 5432,
+    ssl: isProduction ? { rejectUnauthorized: false } : false 
 });
 
 pool.connect();
