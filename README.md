@@ -48,7 +48,7 @@ PostgreSQL (for managing the database)
 
 3.Setup Database
    - Launch PostgreSQL and create a new database named student_management.
-   - Run the SQL commands in setup.sql (included in the repo) to set up tables and seed data.
+   - Create table students with fields name,email,admission number, photo and id.
 
 4.Start the Application
 
