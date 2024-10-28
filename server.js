@@ -30,6 +30,9 @@ const upload = multer({ storage: storage });
 
 // PostgreSQL connection
 const pool = new Pool({
+    connectionString: isProduction
+    ? process.env.DATABASE_URL // Set DATABASE_URL to your Render database URI in your .env
+    : 'postgresql://postgres:Ayan7905@localhost:5432/student_management',
     user: isProduction ? process.env.DB_USER : 'postgres',
     host: isProduction ? process.env.DB_HOST : 'localhost',
     database: isProduction ? process.env.DB_DATABASE : 'student_management',
