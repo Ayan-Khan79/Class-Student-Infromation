@@ -29,17 +29,21 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 // PostgreSQL connection
-const pool = new Pool({
-    connectionString: isProduction
-    ? process.env.DATABASE_URL // Set DATABASE_URL to your Render database URI in your .env
-    : 'postgresql://postgres:Ayan7905@localhost:5432/student_management',
-    user: isProduction ? process.env.DB_USER : 'postgres',
-    host: isProduction ? process.env.DB_HOST : 'localhost',
-    database: isProduction ? process.env.DB_DATABASE : 'student_management',
-    password: isProduction ? process.env.DB_PASSWORD : 'Ayan7905@',
-    port: isProduction ? process.env.DB_PORT : 5432,
-    ssl: isProduction ? { rejectUnauthorized: false } : false 
-});
+const pool = new Pool(
+    isProduction
+      ? {
+          connectionString: process.env.DATABASE_URL, // Only use connectionString in production
+          ssl: { rejectUnauthorized: false },
+        }
+      : {
+          user: 'postgres',
+          host: 'localhost',
+          database: 'student_management',
+          password: 'Ayan7905@',
+          port: 5432,
+        }
+  );
+  
 
 pool.connect();
 
