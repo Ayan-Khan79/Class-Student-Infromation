@@ -1,4 +1,4 @@
-## 📚 Class Student Management System
+## 📚 UniManage
 A simple yet powerful Class Student Management System that enables students to register themselves and allows professors to manage and view student details effortlessly. Built using HTML, CSS, JavaScript, and PostgreSQL, this system streamlines class management for both students and faculty.
 
 
