@@ -7,7 +7,7 @@ A simple yet powerful Class Student Management System that enables students to r
 The video provides a walkthrough of the following key features:
 
 
-Student Registration: How students can easily register and manage their profiles.
+Student Portal: How students can easily register and manage their profiles.
 Professor Portal:
 Searching for students by name or ID.
 Viewing the complete student list.
