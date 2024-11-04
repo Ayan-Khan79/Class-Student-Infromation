@@ -7,11 +7,13 @@ A simple yet powerful Class Student Management System that enables students to r
 The video provides a walkthrough of the following key features:
 
 
-Student Registeration: How students can easily register and manage their profiles.
-Professor Portal:
-Searching for students by name or ID.
-Viewing the complete student list.
-Registering new students directly from the portal.
+**Student Registeration**:
+- How students can easily register and manage their profiles
+
+**Professor Portal**:
+- Searching for students by name or ID.
+- Viewing the complete student list.
+- Registering new students directly from the portal.
 
 ## 🎯 Features
 **Student Portal:**
@@ -105,10 +107,8 @@ We welcome contributions! Feel free to fork this repository, submit pull request
       git push origin feature-name
 5.Open a pull request.
 
-## 📝 License
-This project is licensed under the MIT License.
 
-
+## Thank You for Visit
 
 
 
