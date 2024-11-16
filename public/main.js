@@ -50,7 +50,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
         resetSearch();
     });
-
+    pinForm.addEventListener('keypress',  function(event){
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            const enteredPIN = document.getElementById('pinInput').value;
+            if (enteredPIN === teacherPIN) {
+                teacherActions.style.display = 'block'; // Show teacher functionalities
+                pinForm.style.display = 'none'; // Hide PIN form
+                studentForm.style.display = 'none'; // Hide student registration form
+            } else {
+                alert('Incorrect PIN. Access denied.');
+            }
+            document.getElementById('pinInput').value = ''; // Clear input field
+        }
+        
+    });
     // Event listener for PIN submission
     document.getElementById('submitPinBtn').addEventListener('click', () => {
         const enteredPIN = document.getElementById('pinInput').value;
@@ -78,7 +92,70 @@ document.addEventListener('DOMContentLoaded', () => {
         resetSearch();
     });
 
-   
+    studentForm.addEventListener('keypress',  async function(event) {
+        // Check if the Enter key was pressed
+        if (event.key === 'Enter') {
+          event.preventDefault(); // Prevent default form submission
+          const name = document.getElementById('name').value;
+        const admission_number = document.getElementById('rollno').value;
+        const section = document.getElementById('section').value;
+        const gmail = document.getElementById('gmail').value;
+        const photoInput = document.getElementById('photo'); // Image input
+        const photoFile = photoInput.files[0]; // Get the file
+
+        const formData = new FormData(); // Create FormData object to send both text and image data
+        formData.append('name', name);
+        formData.append('rollno', admission_number);
+        formData.append('section', section);
+        formData.append('gmail', gmail);
+        formData.append('photo', photoFile); // Append photo file
+
+        try {
+            // Sending a POST request to register the student with image
+            const response = await fetch('/registerStudent', {
+                method: 'POST',
+                body: formData, // Send form data
+            });
+
+            const data = await response.json(); // Parse the JSON response once
+
+            if (response.ok) {
+                // If successful, update the student list
+                const studentList = document.getElementById('studentList');
+                const newStudent = document.createElement('li');
+
+                // Create image element for student photo
+                const img = document.createElement('img');
+                img.src = data.student.photo; // Assuming server responds with URL
+                img.style.width = '50px';
+                img.style.height = '50px';
+                img.style.objectFit = 'cover';
+                img.style.borderRadius = '50%';
+                img.style.marginRight = '20px';
+                newStudent.appendChild(img); // Append image to the student list item
+
+                newStudent.textContent = `${data.student.name} (Roll No: ${data.student.rollno}, Section: ${data.student.section}), Gmail: ${data.student.gmail}`;
+
+                const deleteBtn = document.createElement('button');
+                deleteBtn.textContent = 'X';
+                deleteBtn.addEventListener('click', function () {
+                    studentList.removeChild(newStudent);
+                });
+
+                newStudent.appendChild(deleteBtn);
+                studentList.appendChild(newStudent);
+                alert(data.message); // Show success message
+            } else {
+                alert('Failed to register student: ' + data.message); // Provide feedback on failure
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('Error registering student'); // Alert on catch error
+        }
+
+        studentForm.reset();          // Programmatically submit the form
+        }
+      });
 
     // Handle student registration and image upload
     studentForm.addEventListener('submit', async function (event) {
@@ -282,6 +359,16 @@ closeStudentForm.addEventListener('click', () => {
         heading2.style.display = 'none'; // Hide secondary heading
         document.getElementById('student icon').style.display = 'block';
         document.getElementById('teacher icon').style.display = 'block';
+        teacherActions.style.display='none';
+    }
+    else{
+        
+        document.getElementById('student icon').style.display = 'block';
+        document.getElementById('teacher icon').style.display = 'block';
+        heading1.style.display = 'block'; // Show original heading
+        heading2.style.display = 'none'; // Hide secondary heading
+        teacherActions.style.display='none';
+        
     }
     
     closeStudentForm.style.display = 'none'; // Hide the close button
