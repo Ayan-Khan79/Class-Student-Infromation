@@ -1,4 +1,4 @@
-## 📚 Class Student Management System
+## 📚 UniManage
 A simple yet powerful Class Student Management System that enables students to register themselves and allows professors to manage and view student details effortlessly. Built using HTML, CSS, JavaScript, and PostgreSQL, this system streamlines class management for both students and faculty.
 
 
@@ -7,14 +7,16 @@ A simple yet powerful Class Student Management System that enables students to r
 The video provides a walkthrough of the following key features:
 
 
-Student Registration: How students can easily register and manage their profiles.
-Professor Portal:
-Searching for students by name or ID.
-Viewing the complete student list.
-Registering new students directly from the portal.
+**Student Registeration**:
+- How students can easily register and manage their profiles
+
+**Professor Portal**:
+- Searching for students by name or ID.
+- Viewing the complete student list.
+- Registering new students directly from the portal.
 
 ## 🎯 Features
-**Student Registration:**
+**Student Portal:**
 - Students can sign up and manage their information.
 
 **Professor Portal:**
@@ -105,10 +107,8 @@ We welcome contributions! Feel free to fork this repository, submit pull request
       git push origin feature-name
 5.Open a pull request.
 
-## 📝 License
-This project is licensed under the MIT License.
 
-
+## Thank You for Visit
 
 
 
