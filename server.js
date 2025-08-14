@@ -91,15 +91,20 @@ app.get('/searchStudents', async (req, res) => {
     res.setHeader('Cache-Control', 'no-store'); // Disable caching
     const { name } = req.query; // Get the name from the query parameters
 
+    // Check if 'name' was provided
+    if (!name || name.trim() === '') {
+        return res.status(400).json({ error: 'Name parameter is required' });
+    }
+
     try {
         // Query to search for students by name (case-insensitive)
         const result = await pool.query(
             'SELECT * FROM students WHERE LOWER(name) LIKE $1',
-            [`%${name.toLowerCase()}%`] // Use wildcard for partial matches
+            [`%${name.toLowerCase()}%`]
         );
-        res.status(200).json(result.rows);
+        res.status(200).json(result.rows || []); // Always return JSON
     } catch (err) {
-        console.error(err);
+        console.error("Error searching students:", err);
         res.status(500).json({ error: 'Database retrieval failed' });
     }
 });
